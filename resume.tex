@@ -1,88 +1,113 @@
-% LaTeX file for resume
+%realize  LaTeX file for resume
 % This file uses the resume document class (res.cls)
 
-\documentclass{res}
+\documentclass{resume}
 %\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 \usepackage{url}
-\setlength{\textheight}{9.5in} % increase text height to fit on 1-page
+\usepackage{enumitem}
+\setlength{\textheight}{14in} % increase text height to fit on 1-page
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgbonum}
 
 \begin{document}
+\name{JINYANG YAO}
 
-\name{JINYANG YAO\\[12pt]}     % the \\[12pt] adds a blank
-				        % line after name
+\basicInfo{
+    \email{jinyangyaop@gmail.com} \textperiodcentered\
+    \github{github.com/ailrk}  \textperiodcentered\
+    \email{ailrk.github.io/home} \textperiodcentered\
+    \linkedin[linkedin]{https://www.linkedin.com/in/jinyang-yao-649549208/} }
 
-\address{jimmy123good@hotmail.com \\ github.com/jummy233\\ (250) 899 2600}
-\begin{resume}
+\section{\faGraduationCap\ Education}
+\datedsubsection{\textbf{The University of British Columbia}, Kelowna, Canada}{2017 -- 2021}
+\textit{B.S.} Honor in Compuster Science, Minor in Mathematics, Avg 86.9/100, GPA 3.95/4.33
 
-\section{EDUCATION }
-The University of British Columbia, Kelowna, BC, Canada  \hspace{1.4in} \textbf{2017-Present}\\
-    Current third year undergraduate student. Major in Computer Science, minor in Math \\
+\section{\faUser \ Experience}
+    \datedsubsection{\textbf{Chongqing University HVAC department}}{2019 Summer}
 
-\section{PROJECTS}
+    \begin{itemize}
+        \item Participated the ``Yangzi River area air conditioning and heating solution and its corresponding systems'' research project. Developed a program to select the optimal building design that satisfies given multi-objective constraints.
+
+        \item Designed and implemented the project's web platform with flask and react. It collects, manages, and displays temperature data from various sensors across provinces.
+    \end{itemize}
+
+     \vspace{-0.1in}
+
+    \datedsubsection{\textbf{UBC CS honor program}}{2020 - 2021}
+        Using machine learning techique (semi-supervised learning) to assess programming assignments. Developed an iterative method allows human intervention to guide the algorithm to improve the clustering result.
+
+     \vspace{-0.1in}
+
+\section{PERSONAL PROJECTS}
+
+    % --
+    \begin{tabbing}
+        \hspace{2.4in}\= \hspace{2in}\= \kill
+        {\bf cppparsec } \>               \>\url{github.com/ailrk/cppparsec}\\
+    \end{tabbing}
+
+    \vspace{-0.3in}
+    A C++ monadic parser combinator inspired by Haskell's parsec library.
+    \vspace{-0.15in}
+
+    % --
+    \begin{tabbing}
+        \hspace{2.4in}\= \hspace{2in}\= \kill
+        {\bf pogger } \>               \>\url{github.com/ailrk/pogger}\\
+
+    \end{tabbing}
+    \vspace{-0.3in}
+    A partially R5S5 compliant Scheme implementation in Haskell.
+    \vspace{-0.15in}
+
+    % --
+    \begin{tabbing}
+        \hspace{2.4in}\= \hspace{2in}\= \kill
+        {\bf Blgol60 } \>               \>\url{github.com/ailrk/blgol60}\\
+
+    \end{tabbing}
+    \vspace{-0.3in}
+    A haskell implementation of Algol60.
     \vspace{-0.1in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.3in}\= \kill
-        {\bf An optimizer for building design} \>               \>\url{https://github.com/jummy233/epMoo}\\
-    \end{tabbing}\vspace{-30pt}
-    An optimizer made for Chongqing University HVAC department
-    to design energy efficient buildings based on Python.
-    It aimed to maxmize the comfortability of buildings while decrease the
-    annual energy consumption.
 
-    \vspace{-0.2in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.3in}\= \kill
-        {\bf Lisp interpreter} \>               \>\url{https://github.com/jummy233/llisp}\\
-    \end{tabbing}\vspace{-30pt}
-    A Python implemented lisp interpreter with REPL support and Python
-    function call api.
 
-    \vspace{-0.2in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.3in}\= \kill
-        {\bf LIP Website} \>               \>\url{https://github.com/jummy233/lip-site}\\
-    \end{tabbing}\vspace{-30pt}
-    A dynamic website made for LIP --- a local community language teaching
-    project. It is a coroporated project with another contributor.
-    I am responsible for the backend web application and database design.
+\section{\faCogs\ SKILLS}
 
-    \vspace{-0.2in}
-    \begin{tabbing}
-        \hspace{2.3in}\= \hspace{0.3in}\= \kill
-        {\bf Minimal Turning Machining} \>               \>\url{https://github.com/jummy233/brainsavior}\\
-    \end{tabbing}\vspace{-33pt}
-    A minial turining complete language based on C.
+    \textbf{Programming language: }
+    \begin{itemize}
+        \item Haskell (2 years) familiar with type level programming and the Haskell ecosystem.
+        \item C++ (3 years) template meta programming, generic programming, and toolchain under linux such as GDB, Perf, Sanitizers, CMake. Familiar with Linux programming.
+        \item Python (4 years) ecosystem such as Flask, Panda, numpy, sklearn and others.
+        \item Typescript (3 years), DOM based programming, Nodejs, React, and babel plugin.
+        \item Experience with Rust, Ocaml, Commonlisp, Racket, and Java.
+    \end{itemize}
 
-    \vspace{-0.01in}\\
-    and many more
+    \textbf{Compiler: }
+    \begin{itemize}
+        \item DSL design including external DSL and embeded DSL with HOAS, PHOAS.
+        \item Program analysis topics such as CFG analysis, Call graph analysis.
+        \item Various GC algorithms, parsing techniques and automatons theory.
+    \end{itemize}
 
-\section{SKILLS}
-    \textbf{Computer Science:}
-    \vspace{0.05in}\\
-    {\large E}xperienced with \textbf{Python, TypeScript}. \\
-    {\large F}amiliar with \textbf{Haskell, Racket, C++, C}. \\
-    {\large F}amiliar with \textbf{Linux}. \\
-    {\large F}amiliar with Machine Architecture, Network
-    Protocols and Compiling Technique. \\
-    {\large E}xperienced with \textbf{Flask}, \textbf{React}, \textbf{Vuejs}, and \textbf{Sqlite} for web development. \\
-    \textbf{Math:}
-    \vspace{0.05in}\\
-    {\large M}ath knowledge with Linear algebra abstract vector space and their applications, multivariable calculus, odinary differential equation, statistcs, linear programming, dynamic system, number theory. \\
-    \textbf{Language:}
-    \vspace{0.05in}\\
-    Have been living in \textbf{English} Speaking country for more than 3 years, received band 7 for IELTS in 2017. Native \textbf{Chinese} speaker. Currently learning
-    \textbf{Japanese}.
+    \textbf{Programming language theory: }
+    \begin{itemize}
+        \item Semantics: operational, denotational, axiomatic semantics.
+        \item Abstract machines models such as SECD, Krivine, and Graph reduction.
+        \item Lambda calculus and it's extensions in lambda cube.
+        \item MLTT. Dependent type theory.
+    \end{itemize}
 
-\section{WORK EXPERIENCES}
-    \textbf{2016 Summer:} Shanghai Liyang Software
-    \vspace{0.05in}\\
-    First time working for a tech company. \\
-    \textbf{2019 Summer:} Chongqing University HVAC department
-    \vspace{0.05in}\\
-    Participated the Chinese government five-year plan ``Yangzi River area air conditioning and heating solution and its corresponding systems'' in the HVAC department (in civil engineering) of Chongqing University. Developed an optimization program to find the optimal building design to minimize the energy consumption and cost. Design and implemented the corresponding data demonstration web site.
+    \textbf{Web programming: }
+    \begin{itemize}
+        \item Familiar with RESTFUL api design and OAuth2.0 protocol.
+        \item Reflection based ORM system such as SQLAlchemy.
+        \item React based frontend developement.
+    \end{itemize}
 
-\section{COMMUNITY EXPERIENCES}
-    \textbf {2019 Summer:} Joined UBC programming competition.
-\end{resume}
+    \textbf{Others: }
+        English - Fluent, Mandarin - Native.
+        Abstract Algebra and applications in coding theory; Linear Programming; Some Category theory
 \end{document}
