@@ -1,110 +1,80 @@
-%realize  LaTeX file for resume
-% This file uses the resume document class (res.cls)
+% !TEX program = xelatex
 
-\documentclass{res}
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font
-\usepackage{url}
-\usepackage{enumitem}
-\setlength{\textheight}{10in} % increase text height to fit on 1-page
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{tgbonum}
-
+\documentclass{resume}
+%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 
 \begin{document}
-\name{JINYANG YAO\\[12pt]}     % the \\[12pt] adds a blank
+\pagenumbering{gobble} % suppress displaying page number
 
-\address{\textbf{Email:} jinyangyaop@gmail.com \\
-        \textbf{Github: }https://github.com/ailrk \\
-         \textbf{Blog:}    https://ailrk.github.io/home \\
-         \textbf{Linkedin:} https://www.linkedin.com/in/jinyang-yao-649549208 \\
-         \textbf{Contact:}  +1 (250) 899 2600}
-\begin{resume}
+\name{Bin Yuan}
 
-\section{EDUCATION}
-The University of British Columbia, Kelowna, BC, Canada  \hspace{1.2in} \textbf{2017-2021}\\
-    Honours in Computer Science, minor in Mathematics. Average 85.9/100. \\
+\basicInfo{
+  \email{yuanbin2014@gmail.com} \textperiodcentered\
+  \phone{(+86) 131-221-87xxx} \textperiodcentered\
+  \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}
 
-\vspace{-0.2in}
-\section{PAST EXPERIENCES}
-\begin{itemize}[leftmargin=-.4in]
-    \item \textbf{2019 - 2020:} Chongqing University Environment and Ecology department
-      \vspace{0.05in}\\ Participated in the ``Yangzi River area air conditioning and heating solution and its corresponding systems'' research project. Developed a program using NSGAII genetic algorithm to select the optimal set of building designs that satisfy multi-objective constraints.
+\section{\faGraduationCap\ Education}
+\datedsubsection{\textbf{Shanghai Jiao Tong University (SJTU)}, Shanghai, China}{2013 -- Present}
+\textit{Master student} in Electronics Engineering (EE), expected March 2016
+\datedsubsection{\textbf{Xidian University}, Shaanxi, China}{2009 -- 2013}
+\textit{B.S.} in Electronics Engineering (EE)
 
-      Designed and implemented the project's internal web platform. The platform collects, organizes, and displays data from temperature sensors installed across 5 provinces. \\
-
-    \vspace{-0.1in}
-    \item \textbf{2020 - 2021:} UBC computer science honor program. \\
-        Using semi-supervised learning technique to assess programming assignments. Developed an iterative method and the corresponding system that allows human intervention to guide the algorithm to improve the clustering result. \\
-
+\section{\faUsers\ Experience}
+\datedsubsection{\textbf{FLAG Inc.} California, America}{2012 -- Present}
+\role{Summer Intern}{Manager: xxx}
+Brief introduction: xxx.
+\begin{itemize}
+  \item Implemented xxx feature
+  \item Optimized xxx 5\%
+  \item xxx
 \end{itemize}
 
-\vspace{-0.2in}
-\section{PERSONAL PROJECTS}
+\datedsubsection{\textbf{xxx Projects}}{Jan. 2015 -- Present}
+\role{C, Python, Django, Linux}{Individual Projects, collaborated with xxx}
+Brief introduction: xxx
+\begin{itemize}
+  \item Implemented xxx feature
+  \item Optimized xxx 5\%
+  \item xxx
+\end{itemize}
 
-    \vspace{-0.1in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf cppparsec } \>               \>\url{github.com/ailrk/cppparsec}\\
+\datedsubsection{\textbf{\LaTeX\ résumé template}}{May. 2015 -- Present}
+\role{\LaTeX, Maintainer}{Individual Projects}
+An elegant \LaTeX\ résumé template, https://github.com/billryan/resume
+\begin{itemize}
+  \item Easy to be further customized or extended
+  \item Full support for unicode characters (e.g. CJK) with \XeLaTeX\
+  \item FontAwesome 4.5.0 support
+\end{itemize}
 
-    \end{tabbing}\vspace{-30pt}
-    A C++ monadic parser combinator inspired by Haskell's parsec library.
+% Reference Test
+%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+%An xxx optimized for xxx\cite{verma2015large}
+%\begin{itemize}
+%  \item main contribution
+%\end{itemize}
 
-    \vspace{-0.2in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf tml} \>               \>\url{github.com/ailrk/tml}\\
+\section{\faCogs\ Skills}
+\begin{itemize}[parsep=0.5ex]
+  \item Programming Languages: C == Python > C++ > Java
+  \item Platform: Linux
+  \item Development: Web, xxx
+\end{itemize}
 
-    \end{tabbing}\vspace{-30pt}
-    Template meta language. A ml style functional programming language that runs in C++ template.
+\section{\faHeartO\ Honors and Awards}
+\datedline{\textit{\nth{1} Prize}, Award on xxx }{Jun. 2013}
+\datedline{Other awards}{2015}
 
-    \vspace{-0.1in}
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf blgol60 } \>               \>\url{github.com/ailrk/blgol60}\\
+\section{\faInfo\ Miscellaneous}
+\begin{itemize}[parsep=0.5ex]
+  \item Blog: http://your.blog.me
+  \item GitHub: https://github.com/username
+  \item Languages: English - Fluent, Mandarin - Native speaker
+\end{itemize}
 
-    \end{tabbing}\vspace{-30pt}
-    A haskell implementation of algol 60
-
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf bonkml } \>               \>\url{github.com/ailrk/bonkml}\\
-
-    \end{tabbing}\vspace{-30pt}
-    A implementation for ml like langauge base on different written in Ocaml
-
-\section{SKILLS}
-    \begin{itemize}[leftmargin=-.4in]
-        \setlength\itemsep{-1em}
-          \item \textbf{Programming Language:} I'm interested in programming language theory and I work with various langauges. Prodcutive: Haskell, C++, OCaml, Python, Typescript, C#, Java. Familiar: Rust, CommonLisp, Coq, Lean
-          \\
-
-        \item \textbf{Haskell 2 years}
-          Familiar with functional programming,
-          type level programming and various dsl techniques.
-          \\
-
-        \item \textbf{C++: 3 years}
-          Familiar with the C++ memory management,
-          template metaprogramming,
-          generic programming and some implementation details of the STL.
-          \\
-
-        \item \textbf{Python: 5 years}
-          Familiar with flask web framework, sqlalchemy, and
-          traditional machine learning algorithms with sklearn.
-          \\
-
-        \item \textbf{Compiler} Familiar with traditional compilation techniques, optimizations and some program analyses. Familiar with various parsing techniques.
-          \\
-
-        \item \textbf{Math:}
-          Minor in Mathematics.
-          Linear Programming, Dynamic system, Number Theory, Abstract Algebra and their applications in error correction.  \\
-        \item \textbf{Language:} Fluent in \textbf{English}. Native \textbf{Chinese} speaker. Learning \textbf{Japanese}.
-    \end{itemize}
-
-\end{resume}
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
 \end{document}

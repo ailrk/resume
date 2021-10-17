@@ -72,9 +72,7 @@ instance Monoid a => Semigroup (Tex n a) where
   (S s) <> (W w)   = W (fmap (s<>) w)
   (S s1) <> (S s2) = S (s1 <> s2)
 
-instance Monoid a => Monoid (Tex n a) where
-  mempty = S mempty
-
+instance Monoid a => Monoid (Tex n a) where mempty = S mempty
 
 -- | resume is an endomorphism under function composition
 newtype Resume n a = Resume { unResume :: Tex n a -> Tex n a }
@@ -84,9 +82,7 @@ instance IsString (Resume n T.Text) where
 
 instance Monoid a => Semigroup (Resume n a) where
   (Resume x) <> (Resume y) = Resume $ y . x
-instance Monoid a => Monoid (Resume n a) where
-  mempty = Resume id
-
+instance Monoid a => Monoid (Resume n a) where mempty = Resume id
 
 foldResume :: Monoid a => [Resume n a] -> Resume n a
 foldResume = mconcat
