@@ -21,8 +21,8 @@ import           GHC.TypeLits
 import           Tex
 
 -- | my resume supports two langauges.
-data Lang = Lang { cn :: T.Text
-                 , en :: T.Text
+data Lang = Lang { english :: T.Text
+                 , chinese :: T.Text
                  }
           | Default T.Text
 
@@ -38,7 +38,7 @@ v :: T.Text -> T.Text -> MyResume
 v c e = mark $ Lang c e
 
 name :: MyResume
-name = v "姚锦洋" "Jinyang Yao"
+name = v "Jinyang Yao" "姚锦洋"
 
 resume :: MyResume
 resume = foldResume . fmap line $
@@ -65,7 +65,7 @@ education
   = section "Education"
   $ foldResume
   $ [ datasubsection
-        (v "University of British Columbia, " "英蜀哥伦比亚大学, ")
+        (v "University of British Columbia, " "英属哥伦比亚大学, ")
         (v "BC, Canada, " "BC, 加拿大, ")
         "2017 - 2021"
     , br
