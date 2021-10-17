@@ -6,6 +6,7 @@
 {-# LANGUAGE KindSignatures         #-}
 {-# LANGUAGE OverloadedStrings      #-}
 {-# LANGUAGE PolyKinds              #-}
+{-# LANGUAGE QuasiQuotes            #-}
 {-# LANGUAGE RankNTypes             #-}
 {-# LANGUAGE TypeApplications       #-}
 {-# LANGUAGE TypeFamilies           #-}
@@ -19,6 +20,7 @@ import           Data.Proxy
 import qualified Data.Text    as T
 import           GHC.TypeLits
 import           Tex
+import Str (r)
 
 -- | my resume supports two langauges.
 data Lang = Lang { english :: T.Text
@@ -32,13 +34,14 @@ instance Mark Lang 2 T.Text where
   mark (Default de) = mark de
   mark (Lang cn en) = mark (cn :> en :> X)
 
+-- | versioned
+l :: T.Text -> T.Text -> MyResume
+l e c = mark $ Lang e c
+
 type MyResume = Resume 2 T.Text
 
-v :: T.Text -> T.Text -> MyResume
-v c e = mark $ Lang c e
-
 name :: MyResume
-name = v "Jinyang Yao" "姚锦洋"
+name = l "Jinyang Yao" "姚锦洋"
 
 resume :: MyResume
 resume = foldResume . fmap line $
@@ -47,6 +50,10 @@ resume = foldResume . fmap line $
        , "\\pagenumbering{gobble}"
        , name
        , basicInfo
+       , education
+       , experience
+       , projects
+       , skills
        , "\\end{document}"
        ]
 
@@ -54,49 +61,69 @@ basicInfo :: MyResume
 basicInfo =
   foldResume . fmap line $
     [ "\basicInfo{"
-    , "\\email{yuanbin2014@gmail.com} \\textperiodcentered\\"
-    , "\\phone{(+86) 131-221-87xxx} \\textperiodcentered\\"
-    , "\\linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}"
+    , "\\email{", email, " } \\textperiodcentered\\"
+    , "\\phone{", phone, "} \\textperiodcentered\\"
+    , "\\home{", home, "} \\textperiodcentered\\"
+    , "\\github[billryan8]{", github, "}}"
     , "}"
     ]
+  where
+    email = "jinyangyaop@gmail.com"
+    phone = "+1 250 899 2600"
+    home = "https://ailrk.github.io/home"
+    github = "https://github.com/ailrk/resume"
 
 education :: MyResume
 education
   = section "Education"
-  $ foldResume
-  $ [ datasubsection
-        (v "University of British Columbia, " "英属哥伦比亚大学, ")
-        (v "BC, Canada, " "BC, 加拿大, ")
-        "2017 - 2021"
+  . foldResume
+  $ [ datasubsection university univAddr "2017 - 2021"
     , br
-    , foldResume [ textit (v "Major: " "本科： ")
-                 , v "Computer Science" "计算机科学"
-                 , ", "
-                 , textit (v "Minor: " "辅修：")
-                 , v "Mathematics" "数学"
-                 , ", "
-                 , textit "86.9/100, "
-                 , textit "GPA 3.95/4.33"
-                 ]
+    , foldResume
+        [ textit major <> majored <> ", "
+        , textit minor <> minored <> ", "
+        , textit "86.9/100, "
+        , textit "GPA 3.95/4.33"
+        ]
+    ]
+  where
+    university = l "University of British Columbia, " "英属哥伦比亚大学, "
+    univAddr = l "BC, Canada, " "BC, 加拿大, "
+    major = l "Major: " "本科： "
+    majored = l "Computer Science" "计算机科学"
+    minor = l "Minor: " "辅修："
+    minored =  l "Mathematics" "数学"
+
+
+projects :: MyResume
+projects
+  = section "Project"
+  . foldResume
+  $ [
     ]
 
+skills :: MyResume
+skills
+  = section "Experience"
+  . foldResume
+  $ []
 
 experience :: MyResume
 experience
   = section "Experience"
-  $ foldResume
-  $ [ datasubsection
-        (v "University of British Columbia, " "英蜀哥伦比亚大学, ")
-        (v "BC, Canada, " "BC, 加拿大, ")
-        "2017 - 2021"
-    , br
-    , foldResume [ textit (v "Major: " "本科： ")
-                 , v "Computer Science" "计算机科学"
-                 , ", "
-                 , textit (v "Minor: " "辅修：")
-                 , v "Mathematics" "数学"
-                 , ", "
-                 , textit "86.9/100, "
-                 , textit "GPA 3.95/4.33"
-                 ]
-    ]
+  . foldResume
+  $ []
+  where
+    chongqingUni2019 = l
+      [r|
+        Developed optmizing algorithm to find the optimal building design
+        Developed a web platform that collect sensor data across long
+        distances
+     ...
+      |]
+
+      [r|
+        asd
+      |]
+
+
