@@ -19,8 +19,8 @@ import           Data.Kind
 import           Data.Proxy
 import qualified Data.Text    as T
 import           GHC.TypeLits
+import           Str          (r)
 import           Tex
-import Str (r)
 
 -- | my resume supports two langauges.
 data Lang = Lang { english :: T.Text
@@ -37,6 +37,9 @@ instance Mark Lang 2 T.Text where
 -- | versioned
 l :: T.Text -> T.Text -> MyResume
 l e c = mark $ Lang e c
+
+ls :: [T.Text] -> [T.Text] -> MyResume
+ls e c = mark $ Lang (mconcat e) (mconcat c)
 
 type MyResume = Resume 2 T.Text
 
@@ -60,30 +63,24 @@ resume = foldResume . fmap line $
 basicInfo :: MyResume
 basicInfo =
   foldResume . fmap line $
-    [ "\basicInfo{"
-    , "\\email{", email, " } \\textperiodcentered\\"
-    , "\\phone{", phone, "} \\textperiodcentered\\"
-    , "\\home{", home, "} \\textperiodcentered\\"
-    , "\\github[billryan8]{", github, "}}"
-    , "}"
-    ]
+    [ "\basicInfo{" , email , phone , home , github , "}" ]
   where
-    email = "jinyangyaop@gmail.com"
-    phone = "+1 250 899 2600"
-    home = "https://ailrk.github.io/home"
-    github = "https://github.com/ailrk/resume"
+    email = inlineinfo "email"   "jinyangyaop@gmail.com"
+    phone = inlineinfo "phone"   "+1 250 899 2600"
+    home = inlineinfo "home"     "https://ailrk.github.io/home"
+    github = inlineinfo "github" "https://github.com/ailrk/resume"
 
 education :: MyResume
 education
   = section "Education"
   . foldResume
-  $ [ datasubsection university univAddr "2017 - 2021"
+  $ [ datasubsection ((textbf university) <> univAddr) "2017 - 2021"
     , br
     , foldResume
-        [ textit major <> majored <> ", "
-        , textit minor <> minored <> ", "
-        , textit "86.9/100, "
-        , textit "GPA 3.95/4.33"
+        [ textit (major <> majored <> ", ")
+        , textit (minor <> minored <> ", ")
+        , "86.9/100, "
+        , "GPA 3.95/4.33"
         ]
     ]
   where
@@ -97,33 +94,76 @@ education
 
 projects :: MyResume
 projects
-  = section "Project"
-  . foldResume
-  $ [
-    ]
+  = section "Project" . itemize $ [ cppparsec , tml , blgol60 , bonkml ]
+  where
+    cppparsec = foldResume
+      [ datasubsection (textbf "cppparsec") "ailrk.com/ailrk/cppparsec"
+      , br
+      ,  "A monadic parser combinator library in C++"
+      ]
+
+    tml = foldResume
+      [ datasubsection (textbf "tml") "ailrk.com/ailrk/tml"
+      , br
+      , "Untyped lambda calculus written in c++ template"
+      ]
+
+    blgol60 = foldResume
+      [ datasubsection (textbf "blgol60") "ailrk.com/ailrk/blgol60"
+      , br
+      , "Algol 60 implementation with Haskell forntend and C++ backend"
+      ]
+
+    bonkml = foldResume
+      [ datasubsection (textbf "bonkml") "ailrk.com/ailrk/bonkml"
+      , br
+      , "Standard ml like langauge writtin with ocaml frontend and rust backend"
+      ]
 
 skills :: MyResume
 skills
-  = section "Experience"
-  . foldResume
-  $ []
+  = section "Skills" . itemize . fmap item
+  $ [ lang , compiler , webdev , platform , natlang ]
+  where
+    lang = (textbf (l "Programming Language:" "编程语言:")) <> l
+      [r| I'm comfortable with wide range of planauges and programming styles
+          Most used: C++, Haskell, Python, Typescript, Ocaml, Rust
+          Familiar: Commonlisp, C#, Java, Coq, Lean
+      |]
+      [r| some text |]
+    compiler = (textbf (l "Compiler: " "编译器")) <> l
+      [r| Familiar with LLVM pass and LLVM IR, garbage collecting mechanisms,
+          various parsing theory and techniques.
+      |]
+      [r| some text |]
+    webdev = (textbf (l "Web programming: " "Web 开发")) <> l
+      [r| Familiar with flask and react frame work, have experience with
+          RESTFUL API designing and data organization.
+          Understand various concurrency models. Familiar with libuv.
+      |]
+      [r| some text |]
+    platform = (textbf (l "Platform: " "平台")) <> l
+      [r| Familiar with system programming under linux |]
+      [r| some text |]
+    natlang = (textbf (l "Natural langauge: " "自然语言")) <> l
+      [r| some text |]
+      [r| some text |]
+
 
 experience :: MyResume
 experience
   = section "Experience"
   . foldResume
-  $ []
+  $ [
+    ]
   where
     chongqingUni2019 = l
-      [r|
-        Developed optmizing algorithm to find the optimal building design
-        Developed a web platform that collect sensor data across long
-        distances
-     ...
+      [r| Developed an optimization program to find the optimal building
+          design that balances construction cost, comfortness, and energy
+          cosumption.
+          //
+          Developed a webplatform that store, organize, analyze, and
+          demonstrate data of from temperature humidity collected from sensors
+          across long distance.
       |]
-
-      [r|
-        asd
-      |]
-
-
+      [r||]

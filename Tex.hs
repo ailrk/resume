@@ -87,7 +87,9 @@ instance Monoid a => Monoid (Resume n a) where mempty = Resume id
 foldResume :: Monoid a => [Resume n a] -> Resume n a
 foldResume = mconcat
 
-data HList as where X :: HList '[]; (:>) :: a -> HList as -> HList (a ': as);
+data HList as where
+  X :: HList '[]
+  (:>) :: a -> HList as -> HList (a ': as)
 infixr 5 :>
 
 class Mark m n a where mark :: m -> Resume n a
@@ -130,39 +132,49 @@ type family Size xs :: Nat where
 --------------
 -- combinators
 
+type R n = Resume n T.Text
+
 p :: Monoid a => a -> Resume n a
 p text = Resume $ \t -> S text <> t
 
-line ::  Resume n T.Text -> Resume n T.Text
-line text = (text <> br)
+line ::  R n -> R n
+line text = (text <> " //")
 
 br = line ""
 
--- | varadic cmd
-class TexCommand a r | r -> a where cmd :: a -> a -> r
-instance TexCommand a r => TexCommand a (a -> r) where
-  cmd cmdName t1 t2 = (cmd cmdName t1) t2
-instance TexCommand T.Text (Resume n T.Text) where
-  cmd cmdName t = mconcat . fmap p $ [ cmdName, t ]
+section ::  R n -> R n -> R n
+section name body = mconcat [ "\\section{\\ " <> name <> "}" , body , br ]
 
-section ::  Resume n T.Text -> Resume n T.Text -> Resume n T.Text
-section name body = mconcat
-        [ "\\section{\\ " <> name <> "}" , body , br ]
-
-datasubsection :: Resume n T.Text -> Resume n T.Text -> Resume n T.Text -> Resume n T.Text
-datasubsection boldname desc time
+datasubsection :: R n -> R n -> R n
+datasubsection name time
   = foldResume $
-  ["\\datedsubsection{\\textbf", "{", boldname, "} ", desc, "}{", time, "}"]
+  ["\\datedsubsection ", name, "{", time, "}"]
 
-role :: T.Text -> T.Text -> Resume n T.Text
-role a b = (cmd "role") a b
+class Itemize a r | r -> a where itemize :: a -> r
 
-itemize :: [Resume n T.Text] -> Resume n T.Text
-itemize items = foldResume
-        [ line "\\begin{itemize}"
-        , foldResume . fmap line $ items
-        , line "\\end{itemize}"
-        ]
+instance Itemize ([R n]) (R n -> R n) where
+  itemize items parsep = foldResume
+           [ line ("\\begin{itemize}" <> parsep)
+           , foldResume . fmap line $ items
+           , line "\\end{itemize}"
+           ]
 
-textit :: Resume n T.Text -> Resume n T.Text
+instance Itemize ([R n]) (R n) where
+  itemize items = foldResume
+           [ line "\\begin{itemize}"
+           , foldResume . fmap line $ items
+           , line "\\end{itemize}"
+           ]
+
+item :: R n -> R n
+item = (line "\\item " <>)
+
+textit :: R n -> R n
 textit t = "\\textit{" <> t <> "}"
+
+textbf :: R n -> R n
+textbf t = "\\textbf{" <> t <> "}"
+
+inlineinfo :: R n -> R n -> R n
+inlineinfo tag tagval =
+  mconcat ["\\", tag, "{", tagval, " } \\textperiodcentered\\"]
