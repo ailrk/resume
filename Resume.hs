@@ -12,7 +12,7 @@
 {-# LANGUAGE TypeFamilies           #-}
 {-# LANGUAGE TypeOperators          #-}
 
-module Resume where
+module Resume (resume) where
 
 
 import           Data.Kind
@@ -38,9 +38,6 @@ instance Mark Lang 2 T.Text where
 l :: T.Text -> T.Text -> MyResume
 l e c = mark $ Lang e c
 
-ls :: [T.Text] -> [T.Text] -> MyResume
-ls e c = mark $ Lang (mconcat e) (mconcat c)
-
 type MyResume = Resume 2 T.Text
 
 name :: MyResume
@@ -57,18 +54,17 @@ resume = foldResume . fmap line $
        , experience
        , projects
        , skills
+       , misc
        , "\\end{document}"
        ]
 
 basicInfo :: MyResume
 basicInfo =
   foldResume . fmap line $
-    [ "\basicInfo{" , email , phone , home , github , "}" ]
+    [ "\\basicInfo{" , email , phone, "}" ]
   where
     email = inlineinfo "email"   "jinyangyaop@gmail.com"
     phone = inlineinfo "phone"   "+1 250 899 2600"
-    home = inlineinfo "home"     "https://ailrk.github.io/home"
-    github = inlineinfo "github" "https://github.com/ailrk/resume"
 
 education :: MyResume
 education
@@ -91,49 +87,53 @@ education
     minor = l "Minor: " "辅修："
     minored =  l "Mathematics" "数学"
 
+itemSection :: MyResume -> [MyResume] -> MyResume
+itemSection name = section name . itemize . fmap item
 
 projects :: MyResume
-projects
-  = section "Project" . itemize $ [ cppparsec , tml , blgol60 , bonkml ]
+projects = itemSection "Projects" [ cppparsec , tml , blgol60 , bonkml ]
   where
     cppparsec = foldResume
-      [ datasubsection (textbf "cppparsec") "ailrk.com/ailrk/cppparsec"
-      , br
+      [ datasubsection (textbf "cppparsec") "ailrk.com/ailrk/cppparsec" <> br
       ,  "A monadic parser combinator library in C++"
       ]
 
     tml = foldResume
-      [ datasubsection (textbf "tml") "ailrk.com/ailrk/tml"
-      , br
+      [ datasubsection (textbf "tml") "ailrk.com/ailrk/tml" <> br
       , "Untyped lambda calculus written in c++ template"
       ]
 
     blgol60 = foldResume
-      [ datasubsection (textbf "blgol60") "ailrk.com/ailrk/blgol60"
-      , br
+      [ datasubsection (textbf "blgol60") "ailrk.com/ailrk/blgol60" <> br
       , "Algol 60 implementation with Haskell forntend and C++ backend"
       ]
 
     bonkml = foldResume
-      [ datasubsection (textbf "bonkml") "ailrk.com/ailrk/bonkml"
-      , br
+      [ datasubsection (textbf "bonkml") "ailrk.com/ailrk/bonkml" <> br
       , "Standard ml like langauge writtin with ocaml frontend and rust backend"
       ]
 
 skills :: MyResume
-skills
-  = section "Skills" . itemize . fmap item
-  $ [ lang , compiler , webdev , platform , natlang ]
+skills = itemSection "Skills" [ lang , compiler , webdev , platform ]
   where
     lang = (textbf (l "Programming Language:" "编程语言:")) <> l
-      [r| I'm comfortable with wide range of planauges and programming styles
-          Most used: C++, Haskell, Python, Typescript, Ocaml, Rust
+      [r| Faimiliar wide range of planauges and programming styles.
+          //
+          Most used: C++, Haskell, Python, Ocaml, Rust, Typescript
           Familiar: Commonlisp, C#, Java, Coq, Lean
       |]
       [r| some text |]
     compiler = (textbf (l "Compiler: " "编译器")) <> l
       [r| Familiar with LLVM pass and LLVM IR, garbage collecting mechanisms,
           various parsing theory and techniques.
+      |]
+      [r| some text |]
+    pl = (textbf (l "Programming language theory: " "编程语言理论")) <> l
+      [r|  Familiar with lambda calculus and it's type level extensions along
+           lambda cube.
+           Familiar with operational and denotational semantics of ML family
+           languages.
+           Familiar with martin lof type theory
       |]
       [r| some text |]
     webdev = (textbf (l "Web programming: " "Web 开发")) <> l
@@ -145,19 +145,27 @@ skills
     platform = (textbf (l "Platform: " "平台")) <> l
       [r| Familiar with system programming under linux |]
       [r| some text |]
+
+misc :: MyResume
+misc = itemSection "Misc" [ home , github, natlang ]
+  where
+    home = "Home: https://ailrk.github.io/home"
+    github = "Github: https://github.com/ailrk/resume"
     natlang = (textbf (l "Natural langauge: " "自然语言")) <> l
       [r| some text |]
       [r| some text |]
 
-
 experience :: MyResume
 experience
-  = section "Experience"
-  . foldResume
-  $ [
+  = itemSection "Experience "
+    [ chongqingUni2019
+    , ubchonor2020
     ]
   where
-    chongqingUni2019 = l
+    chongqingUni2019 =
+      (textbf (l "Chonqing University Environment and Ecology department: "
+                 ""))
+      <> l
       [r| Developed an optimization program to find the optimal building
           design that balances construction cost, comfortness, and energy
           cosumption.
@@ -166,4 +174,10 @@ experience
           demonstrate data of from temperature humidity collected from sensors
           across long distance.
       |]
-      [r||]
+      [r| some text |]
+    ubchonor2020 =
+      (textbf (l "UBC computer science honor program"
+                 ""))
+      <> l
+      [r| Deve|]
+      [r| some text |]

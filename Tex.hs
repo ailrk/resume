@@ -18,7 +18,24 @@
 {-# LANGUAGE TypeFamilies           #-}
 {-# LANGUAGE TypeOperators          #-}
 {-# LANGUAGE UndecidableInstances   #-}
-module Tex where
+module Tex
+  ( Mark(..)
+  , Resume(..)
+  , foldResume
+  , R(..)
+  , p
+  , line
+  , HList(..)
+  , br
+  , section
+  , datasubsection
+  , Itemize(..)
+  , item
+  , textit
+  , textbf
+  , inlineinfo
+  )
+  where
 
 import           Data.Kind
 import           Data.Proxy
@@ -138,12 +155,12 @@ p :: Monoid a => a -> Resume n a
 p text = Resume $ \t -> S text <> t
 
 line ::  R n -> R n
-line text = (text <> " //")
+line text = (text <> "\n")
 
-br = line ""
+br = line "\\"
 
 section ::  R n -> R n -> R n
-section name body = mconcat [ "\\section{\\ " <> name <> "}" , body , br ]
+section name body = mconcat [ "\\section{\\ " <> name <> "}" , body , "\n" ]
 
 datasubsection :: R n -> R n -> R n
 datasubsection name time
