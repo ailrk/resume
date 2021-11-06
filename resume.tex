@@ -6,12 +6,11 @@
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 \usepackage{url}
 \usepackage{enumitem}
-\setlength{\textheight}{10in} % increase text height to fit on 1-page
+\setlength{\textheight}{14in} % increase text height to fit on 1-page
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{tgbonum}
-
 
 \begin{document}
 \name{JINYANG YAO}
@@ -22,11 +21,6 @@
     \email{ailrk.github.io/home} \textperiodcentered\
     \linkedin[linkedin]{https://www.linkedin.com/in/jinyang-yao-649549208/} }
 
-
-% \section{EDUCATION}
-% The University of British Columbia, Kelowna, BC, Canada  \hspace{1.2in} \textbf{2017-Present}\\
-
-
 \section{\faGraduationCap\ Education}
 \datedsubsection{\textbf{The University of British Columbia}, Kelowna, Canada}{2017 -- 2021}
 \textit{B.S.} Honor in Compuster Science, Minor in Mathematics, Avg 86.9/100, GPA 3.95/4.33
@@ -34,19 +28,22 @@
 \section{PAST EXPERIENCES}
     \datedsubsection{\textbf{Chongqing University HVAC department}}{2019 Summer}
 
-    \itemnize
-    \item Participated the ``Yangzi River area air conditioning and heating solution and its corresponding systems'' research project. Developed a program to select building designs that satisfies given multi-objective constraints.
-     Designed and implemented the project's web platform with flask and react.
+    \begin{itemize}
+        \item Participated the ``Yangzi River area air conditioning and heating solution and its corresponding systems'' research project. Developed a program to select the optimal building design that satisfies given multi-objective constraints.
+
+        \item Designed and implemented the project's web platform with flask and react.
+    \end{itemize}
 
      \vspace{-0.1in}
 
     \datedsubsection{\textbf{UBC CS honor program}}{2020 - 2021}
-        Using semi-supervised learning to assess programming assignments. Developed an iterative method allows human intervention to guide the algorithm to improve the clustering result.
+        Using machine learning techique (semi-supervised learning) to assess programming assignments. Developed an iterative method allows human intervention to guide the algorithm to improve the clustering result.
 
      \vspace{-0.1in}
 
 \section{PERSONAL PROJECTS}
 
+    % --
     \begin{tabbing}
         \hspace{2.4in}\= \hspace{0.9in}\= \kill
         {\bf cppparsec } \>               \>\url{github.com/ailrk/cppparsec}\\
@@ -56,6 +53,7 @@
     A C++ monadic parser combinator inspired by Haskell's parsec library.
     \vspace{-0.1in}
 
+    % --
     \begin{tabbing}
         \hspace{2.4in}\= \hspace{0.9in}\= \kill
         {\bf pogger } \>               \>\url{github.com/ailrk/pogger}\\
@@ -65,25 +63,7 @@
     A partially R5S5 compliant scheme implementation in Haskell.
     \vspace{-0.1in}
 
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf lambda cube} \>               \>\url{github.com/ailrk/lambda-cube}\\
-
-    \end{tabbing}
-
-    \vspace{-0.3in}
-    A set of langauges extended from the simply typed lambda calculus.
-    \vspace{-0.1in}
-
-    \begin{tabbing}
-        \hspace{2.4in}\= \hspace{0.9in}\= \kill
-        {\bf tml} \>               \>\url{github.com/ailrk/tml}\\
-    \end{tabbing}
-
-    \vspace{-0.3in}
-    Template meta language. A ml style functional programming language in C++ template.
-    \vspace{-0.1in}
-
+    % --
     \begin{tabbing}
         \hspace{2.4in}\= \hspace{0.9in}\= \kill
         {\bf Blgol60 } \>               \>\url{github.com/ailrk/blgol60}\\
@@ -96,40 +76,38 @@
 
 \section{SKILLS}
 
-    \textbf{Programming language :}
-    Familiar with wide range of programming language.
-    Most used: C++, Haskell, Python, Typescript Familiar: Ocaml, Rust, Commonlisp, Java.
-    \\
-    \vspace{-0.15in}
+    \textbf{Programming language: }
+    \begin{itemize}
+        \item Functional programming, type level programming and the Haskell ecosystem.
+        \item C++ template meta programming, C++ generic programming, and development toolchain under linux such as GDB, Perf, Sanitizers, CMake. Familiar with Linux programming.
+        \item Python ecosystem such as Flask, Panda, numpy, sklearn and others.
+        \item Typescript, DOM based programming, Nodejs, React, and babel plugin.
+        \item Experience with Rust, Ocaml, Commonlisp, Racket, and Java.
+    \end{itemize}
 
     \textbf{Compiler: }
-    Familiar with DSL design including external DSL and embeded DSL with FOAS, HOAS, PHOAS.
-    Familiar with program analysis process such as CFG analysis, Call graph analysis.
-    Familiar with LLVM and LLVM IR.
-    Familiar with various GC algorithms, parsing techniques and automatons theory.
-    \\
-    \vspace{-0.15in}
+    \begin{itemize}
+        \item Familiar with DSL design including external DSL and embeded DSL with HOAS, PHOAS.
+        \item Familiar with program analysis process such as CFG analysis, Call graph analysis.
+        \item Familiar with various GC algorithms, parsing techniques and automatons theory.
+    \end{itemize}
 
-    \textbf{Programming language theory: } Understand operational, denotational, axiomatic semantics. Familiar with some abstract machines models such as SECD, Krivine, or Graph reduction.
-    Familiar with languages in Lambda cube.
-    Intuitionistic logic; Linear logic; Familiar with Agda and Lean.
-    \\
-    \vspace{-0.15in}
+    \textbf{Programming language theory: }
+    \begin{itemize}
+        \item Semantics: operational, denotational, axiomatic semantics.
+        \item Abstract machines models such as SECD, Krivine, and Graph reduction.
+        \item Lambda calculus and it's extensions in lambda cube.
+        \item MLTT. Dependent type theory.
+    \end{itemize}
 
-    \textbf{Platform: }  Familiar with system programming under linux. Familiar with GCC family tool chain, CMake.
-    \\
-    \vspace{-0.15in}
+    \textbf{Web programming: }
+    \begin{itemize}
+        \item RESTFUL api design. Familiar with OAuth2.0 protocol.
+        \item Reflection based ORM system such as SQLAlchemy.
+        \item React based frontend developement.
+    \end{itemize}
 
-    \textbf{Web programming: } Flask; react; MySQL; sqlite lite; RESTFUL api designing. Understand SQLAlchemy and
-    \\
-    \vspace{-0.15in}
-
-    \textbf{Language: }  English - Fluent, Mandarin - Native
-    \\
-    \vspace{-0.15in}
-
-    \textbf{Others}:  Abstract Algebra and applications in error correction, Linear Programming,
-    \\
-    \vspace{-0.15in}
-
+    \textbf{Others: }
+        English - Fluent, Mandarin - Native.
+        Abstract Algebra and applications in coding theory; Linear Programming; Some Category theory
 \end{document}
