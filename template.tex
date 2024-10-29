@@ -116,9 +116,11 @@ $if(education)$
 \noindent
 $for(education)$
     \note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
-    \emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.1cm]
+    \emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\
 $endfor$
 $endif$
+
+\vspace{-10pt}
 
 \section*{Skills}
 $if(skills)$

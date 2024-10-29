@@ -14,10 +14,11 @@ urls:
 
 skills:
 - Haskell, C++, C, Python, Typescript
-- Linux system programming
 - System design, RESTFUL api design, Event sourcing, DDD modeling
-- Programming language theory.
+- Linux system programming
+- Functional programming
 - Nix build system
+- Programming language theory.
 
 projects:
 - name: melonOS
@@ -37,14 +38,14 @@ experience:
   city: Vancouver, BC, Canada
   detail:
     - Designed, implemented and maintained the CQRS and event sourcing based platform in Haskell and Elm.
-    - Maintained the kubernetes cluster, CI and the deployment process.
+    - Maintained the kubernetes cluster, CI and the deployment.
     - Interviewed software developer candidates.
 
 - years: 2020-2021
   employer: The University of British Columbia
   job: UBC CS honours program
   city: Kelowna, BC, Canada
-  detail: Using semi-supervised learning technique to automatically assess first year prgoramming assignments.
+  detail: Using machine learning techniques to automatically assess first year prgoramming assignments.
 
 - years: 2019
   employer: Chongqing Univeristy
@@ -56,11 +57,11 @@ education:
 - year: 2017-2021
   subject: B.S Honours in Computer Science, Minor in Mathmetics
   institute: The University of British Columbia
-  city: Kelonw, BC, Canada
+  city: Kelowna, BC, Canada
 
 # Settings
 mainfont: Crimson Pro
-fontsize: 12pt
+fontsize: 11pt
 lang: en-GB
 geometry: a4paper, left=35mm, right=35mm, top=10mm, bottom=15mm
 ---
