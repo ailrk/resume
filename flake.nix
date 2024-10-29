@@ -21,8 +21,8 @@
       };
     };
 
-    devShells.default = packages.kbgui.overrideAttrs (prev: {
-      buildInputs = with pkgs; prev.buildInputs ++ [
+    devShells.default = packages.resume.overrideAttrs (prev: {
+      buildInputs = with pkgs; [
         texliveSmall
       ];
     });
