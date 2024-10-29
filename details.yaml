@@ -1,0 +1,66 @@
+---
+# Personal details
+name: Jinyang Yao
+address: Vancouver, BC, Canada
+phone: "+1 250-899-2600"
+email: jinyangyaop@gmail.com
+# Insert URLs without http://
+urls:
+- top.ailrk.com
+- github.com/ailrk
+- linkedin.com/in/jinyangyao
+
+# Sections
+
+skills:
+- Haskell, C++, C, Python, Typescript
+- Linux system programming
+- System design, RESTFUL api design, Event sourcing, DDD modeling
+- Programming language theory.
+- Nix build system
+
+projects:
+- name: melonOS
+  link: github.com/ailrk/melonOS
+  description: A posix style operating system written in C
+- name: cppparsec
+  link: github.com/ailrk/cppparsec
+  description: A header only C++ parser combinator library
+- name: blgol60
+  link: github.com/ailrk/blgol60
+  description: An algol60 compiler in Haskell
+
+experience:
+- years: 2021–2024
+  employer: Flint Healthcare (YC20)
+  job: Full Stack Software Developer
+  city: Vancouver, BC, Canada
+  detail:
+    - Designed, implemented and maintained the CQRS and event sourcing based platform in Haskell and Elm.
+    - Maintained the kubernetes cluster, CI and the deployment process.
+    - Interviewed software developer candidates.
+
+- years: 2020-2021
+  employer: The University of British Columbia
+  job: UBC CS honours program
+  city: Kelowna, BC, Canada
+  detail: Using semi-supervised learning technique to automatically assess first year prgoramming assignments.
+
+- years: 2019
+  employer: Chongqing Univeristy
+  job: Software Developer Internship
+  city: Chongqing, China
+  detail: Implemented tools to optimize building design with multi objective constrains. Implemented Flask and React based platform to aggregate and demonstrate sensor data.
+
+education:
+- year: 2017-2021
+  subject: B.S Honours in Computer Science, Minor in Mathmetics
+  institute: The University of British Columbia
+  city: Kelonw, BC, Canada
+
+# Settings
+mainfont: Crimson Pro
+fontsize: 12pt
+lang: en-GB
+geometry: a4paper, left=35mm, right=35mm, top=10mm, bottom=15mm
+---
