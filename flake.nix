@@ -48,8 +48,7 @@
             hyperref
             polyglossia
             fontspec
-            greek-fontenc
-            ;
+            greek-fontenc;
         };
       xelatex = with pkgs;
         runCommand "xelatex" {

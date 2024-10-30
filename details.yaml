@@ -17,18 +17,18 @@ skills:
 - Linux system programming
 - Functional programming
 - Nix build system
-- Programming language theory.
+- Programming language theory
 
 projects:
 - name: melonOS
   link: github.com/ailrk/melonOS
-  description: A posix style operating system written in C
+  description: A posix style operating system written in C.
 - name: cppparsec
   link: github.com/ailrk/cppparsec
-  description: A header only C++ parser combinator library
+  description: A header only C++ parser combinator library.
 - name: blgol60
   link: github.com/ailrk/blgol60
-  description: An algol60 compiler in Haskell
+  description: An algol60 compiler in Haskell.
 
 experience:
 - years: 2021–2024
@@ -37,7 +37,7 @@ experience:
   city: Vancouver, BC, Canada
   detail:
     - Designed, implemented and maintained the CQRS and event sourcing based platform in Haskell and Elm.
-    - Maintained the kubernetes cluster, CI and the deployment.
+    - Maintained the kubernetes cluster, CI and the deployment process.
     - Interviewed software developer candidates.
 
 - years: 2020-2021
