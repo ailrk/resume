@@ -32,6 +32,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      crimson-pro = pkgs.crimson-pro;
       texlive = with pkgs;
         texlive.combine {
           inherit
