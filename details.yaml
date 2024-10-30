@@ -11,7 +11,6 @@ urls:
 - linkedin.com/in/jinyangyao
 
 # Sections
-
 skills:
 - Haskell, C++, C, Python, Typescript
 - System design, RESTFUL api design, Event sourcing, DDD modeling
