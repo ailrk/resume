@@ -7,6 +7,8 @@ jobs:
   upload-resume-r2:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@v3
       - name: Download boto3
         run: pip install boto3
       - name: Upload resume to r2
