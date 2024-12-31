@@ -12,23 +12,26 @@ urls:
 
 # Sections
 skills:
-- Haskell, C++, C, Python, Typescript
-- System design, RESTFUL api design, Event sourcing, DDD modeling
-- Linux system programming
-- Functional programming
-- Nix build system
-- Programming language theory
+- "Working Languages: Haskell, C, C++, C#, Typescript, Python"
+- "Haskell: Servant, Scotty, Effect System, DSL Design"
+- "C++: LLVM, Qt, SDL2, Template Meta Programming"
+- "C: GTK4, Linux Programming, libfuse"
+- "C#: ASP.net, Unity3D, Giraffe"
+- "Python: Flask, Numpy, Sklearn"
+- "Frontend: ReactJS, HTMX, Hyperscript, VueJS, Sentry, Pure CSS"
+- "System Programming: GDB, LLDB, Valgrind, X86 Assembly, NASM, GCC Linker Script"
+- "Storage: Postgresql, Sqlite, RabbitMQ, Redis, MongoDB"
+- "Cloud Tools: Kubernetes, Docker, Nix, Helm, Github Action, LogDNA, Prometheus"
+- "Cloud Platforms: AWS, Google Cloud, Tofu, Terraform"
+- System Design, RESTFUL API design, Event Sourcing, DDD Modeling
 
 projects:
 - name: melonOS
   link: github.com/ailrk/melonOS
-  description: A posix style operating system written in C.
+  description: A POSIX style operating system written in C.
 - name: cppparsec
   link: github.com/ailrk/cppparsec
   description: A header only C++ parser combinator library.
-- name: blgol60
-  link: github.com/ailrk/blgol60
-  description: An algol60 compiler in Haskell.
 
 experience:
 - years: 2021–2024
@@ -43,7 +46,7 @@ experience:
 - years: 2020-2021
   employer: The University of British Columbia
   job: UBC CS honours program
-  city: Kelowna, BC, Canada
+  city: BC, Canada
   detail: Using machine learning techniques to automatically assess first year prgoramming assignments.
 
 - years: 2019
@@ -56,7 +59,7 @@ education:
 - year: 2017-2021
   subject: B.S Honours in Computer Science, Minor in Mathmetics
   institute: The University of British Columbia
-  city: Kelowna, BC, Canada
+  city: BC, Canada
 
 # Settings
 mainfont: Crimson Pro
