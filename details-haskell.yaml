@@ -1,0 +1,22 @@
+---
+skills:
+- Haskell, Elm, Typescript, Python
+- Servant, Scotty, Yesod, Persistent, Effecful, DSL Design
+- Elm UI, Elm UI Widget
+- Kubernetes, Docker, Nix, Helm, CI/CD (Github Action), LogDNA, Prometheus
+- AWS, Google Cloud, Tofu, Terraform
+- Postgresql, Sqlite, RabbitMQ, Redis, MongoDB
+- ReactJS, HTMX, Hyperscript, VueJS, Sentry, Pure CSS
+- DOM, HTTP, Websocket, SSE
+- System Design, Restful API design, Event Sourcing, DDD Modeling
+- Unit testing, Integration testing, Continuous integration
+- Git
+
+projects:
+- name: melonOS
+  link: github.com/ailrk/melonOS
+  description: A POSIX style operating system written in C.
+- name: filehub
+  link: github.com/ailrk/filehub
+  description: A file manager for self hosting.
+---

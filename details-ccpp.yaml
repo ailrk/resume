@@ -1,0 +1,20 @@
+---
+skills:
+- C++, C, Python, Haskell
+- Linux System Programming, Libfuse, Kernel Modules
+- Network programming, Socket, TCP/IP
+- Pthread, C++17 Threads, Libuv, OpenMP
+- LLVM, ANTLR
+- Qt5, ImGUI, GTK4, SDL2
+- Object Orientated Design, Template Meta Programming
+- GCC, Clang, GDB, LLDB, Valgrind, X86 Assembly, NASM, GCC Linker Script
+- Git
+
+projects:
+- name: melonOS
+  link: github.com/ailrk/melonOS
+  description: A POSIX style operating system written in C.
+- name: cppparsec
+  link: github.com/ailrk/cppparsec
+  description: A header only C++ parser combinator library.
+---

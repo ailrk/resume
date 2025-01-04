@@ -1,10 +1,23 @@
 TEX = pandoc
-src = template.tex details.yaml
+SRC = template.tex details.yaml
+TGT = resume.pdf
 FLAGS = --pdf-engine=xelatex
 
-resume.pdf : $(src)
-	$(TEX) $(filter-out $<,$^ ) -o $@ --template=$< $(FLAGS)
+all:
+	make haskell
+	make webdev
+	make ccpp
+
+webdev: $(SRC) details-webdev.yaml
+	$(TEX) $(filter-out $<,$^ ) -o webdev/$(TGT) --template=$< $(FLAGS)
+
+ccpp: $(SRC) details-ccpp.yaml
+	$(TEX) $(filter-out $<,$^ ) -o ccpp/$(TGT) --template=$< $(FLAGS)
+
+haskell: $(SRC) details-haskell.yaml
+	$(TEX) $(filter-out $<,$^ ) -o haskell/$(TGT) --template=$< $(FLAGS)
+
 
 .PHONY: clean
 clean :
-	rm resume.pdf
+	find . -name 'resume.pdf' -delete -print

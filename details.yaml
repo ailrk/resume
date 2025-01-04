@@ -10,60 +10,42 @@ urls:
 - github.com/ailrk
 - linkedin.com/in/jinyangyao
 
-# Sections
-skills:
-- "Working Languages: Haskell, C, C++, C#, Typescript, Python"
-- "Haskell: Servant, Scotty, Effect System, DSL Design"
-- "C++: LLVM, Qt, SDL2, Template Meta Programming"
-- "C: GTK4, Linux Programming, libfuse"
-- "C#: ASP.net, Unity3D, Giraffe"
-- "Python: Flask, Numpy, Sklearn"
-- "Frontend: ReactJS, HTMX, Hyperscript, VueJS, Sentry, Pure CSS"
-- "System Programming: GDB, LLDB, Valgrind, X86 Assembly, NASM, GCC Linker Script"
-- "Storage: Postgresql, Sqlite, RabbitMQ, Redis, MongoDB"
-- "Cloud Tools: Kubernetes, Docker, Nix, Helm, Github Action, LogDNA, Prometheus"
-- "Cloud Platforms: AWS, Google Cloud, Tofu, Terraform"
-- System Design, RESTFUL API design, Event Sourcing, DDD Modeling
-
-projects:
-- name: melonOS
-  link: github.com/ailrk/melonOS
-  description: A POSIX style operating system written in C.
-- name: cppparsec
-  link: github.com/ailrk/cppparsec
-  description: A header only C++ parser combinator library.
-
 experience:
 - years: 2021–2024
   employer: Flint Healthcare (YC20)
-  job: Full Stack Software Developer
+  job: Full Stack Software Engineer
   city: Vancouver, BC, Canada
   detail:
-    - Designed, implemented and maintained the CQRS and event sourcing based platform in Haskell and Elm.
-    - Maintained the kubernetes cluster, CI and the deployment process.
+    - Flint is a Y-Combinator backed company that helps US hospitals source international professionals. I worked as a Full Stack Software Engineer and owned a wide range of responsibilities.
+    - Designed, implemented and maintained the CQRS and event sourcing based platform in Haskell and Elm. The system can be scaled on read and write separately; the event sourcing design allows us to revert to any state in the past.
+    - Designed and implemented various company internal tools in C#, F#, and Python that automate tasks for the operation team. This includes integration with various third-party services like Intercom, Mailjet, etc.
+    - Maintained the AWS EKS, ECR, kubernetes cluster, CI and the deployment process.
     - Interviewed software developer candidates.
 
 - years: 2020-2021
   employer: The University of British Columbia
   job: UBC CS honours program
   city: BC, Canada
-  detail: Using machine learning techniques to automatically assess first year prgoramming assignments.
+  detail:
+    - An one year research project that uses machine learning techniques to automatically assess first year prgoramming assignments. This includes designing a method to perform semi-supervised learning technique on unstructured assignment data, iterative development of an application that implements the method, and an final report with qualitative analysis on the final result.
 
 - years: 2019
   employer: Chongqing Univeristy
   job: Software Developer Internship
   city: Chongqing, China
-  detail: Implemented tools to optimize building design with multi objective constrains. Implemented Flask and React based platform to aggregate and demonstrate sensor data.
+  detail:
+    - Worked for an University research group to find the building design with the optimal energy efficiency. Implemented tools to optimize building design with multi objective constrains with NSGA-II genetic algorithm.
+    - Implemented a python and react based web platform to help the research group to collect, analyse and demonstrate temperature sensor data collected in realtime.
 
 education:
 - year: 2017-2021
-  subject: B.S Honours in Computer Science, Minor in Mathmetics
+  subject: B.S Honours in Computer Science, Minor in Mathmetics (GPA 3.8)
   institute: The University of British Columbia
   city: BC, Canada
 
 # Settings
 mainfont: Crimson Pro
-fontsize: 11pt
+fontsize: 10pt
 lang: en-GB
-geometry: a4paper, left=35mm, right=35mm, top=10mm, bottom=15mm
+geometry: a4paper, left=35mm, right=35mm, top=8mm, bottom=5mm
 ---

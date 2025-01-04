@@ -76,6 +76,8 @@ $endif$
 
 {\LARGE $name$}\\[.2cm]
 
+\vspace{-10pt}
+
 $if(urls)$
 \begin{multicols}{2}
 $endif$
@@ -84,7 +86,7 @@ $for(address)$
 $address$\\
 $endfor$
 
-\vspace{-10pt}
+\vspace{-13pt}
 
 $phone$\\
 \href{mailto:$email$}{$email$}\\
@@ -99,6 +101,8 @@ $endfor$
 \end{multicols}
 $endif$
 
+\vspace{-15pt}
+
 \section*{Previous Experience}
 \noindent
 $for(experience)$
@@ -110,6 +114,8 @@ $for(experience)$
     $endfor$
 \end{itemize}
 $endfor$
+
+\vspace{-10pt}
 
 $if(education)$
 \section*{Education}
@@ -131,6 +137,8 @@ $if(skills)$
     $endfor$
 \end{itemize}
 $endif$
+
+\vspace{-10pt}
 
 \section*{Projects}
 $if(projects)$
