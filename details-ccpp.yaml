@@ -1,13 +1,16 @@
 ---
 skills:
-- C++, C, Python, Haskell
-- Linux System Programming, Libfuse, Kernel Modules
-- Network programming, Socket, TCP/IP
+- C++, C, Haskell, Python
+- Linux System Programming, Network programming, Socket, TCP/IP
+- Kernel development, Kernel debugging
 - Pthread, C++17 Threads, Libuv, OpenMP
 - LLVM, ANTLR
-- Qt5, ImGUI, GTK4, SDL2
-- Object Orientated Design, Template Meta Programming
 - GCC, Clang, GDB, LLDB, Valgrind, X86 Assembly, NASM, GCC Linker Script
+- Object Orientated Design, Template Meta Programming
+- Kubernetes, Docker, Nix, Helm, CI/CD (Github Action), LogDNA, Prometheus
+- AWS, Google Cloud, Tofu, Terraform
+- Postgresql, Sqlite, RabbitMQ, Redis, MongoDB
+- System Design, Restful API design, Event Sourcing, DDD Modeling
 - Git
 
 projects:

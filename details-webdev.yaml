@@ -4,10 +4,10 @@ skills:
 - ASP.net, Giraffe, Unity3D, ANTLR, Flask, Qt5, sklearn, Numpy, Pandas, Django, Servant, Yesod
 - Kubernetes, Docker, Nix, Helm, CI/CD (Github Action), LogDNA, Prometheus, AWS, Google Cloud, Tofu, Terraform
 - Postgresql, Sqlite, RabbitMQ, Redis, MongoDB
-- ReactJS, HTMX, Hyperscript, VueJS, Sentry, Pure CSS, Babel, GruntJS, Jest, Webpack
+- ReactJS, HTMX, Hyperscript, VueJS, Sentry, Pure CSS, Babel, GruntJS, Webpack
 - System Design, Restful API design, Event Sourcing, DDD Modeling
 - DOM, HTTP, Websocket, SSE
-- Unit testing, Integration testing, Continuous integration
+- Unit testing, Integration testing
 - Object Oriented Design, Functional programming
 - Git
 

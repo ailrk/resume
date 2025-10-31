@@ -6,7 +6,6 @@ phone: "+1 250-899-2600"
 email: jinyangyaop@gmail.com
 # Insert URLs without http://
 urls:
-- ailrk.com
 - github.com/ailrk
 - linkedin.com/in/jinyangyao
 
@@ -27,7 +26,7 @@ experience:
   job: UBC CS honours program
   city: BC, Canada
   detail:
-    - An one year research project that uses machine learning techniques to automatically assess first year prgoramming assignments. This includes designing a method to perform semi-supervised learning technique on unstructured assignment data, iterative development of an application that implements the method, and an final report with qualitative analysis on the final result.
+    - A one year research project that uses machine learning techniques to automatically assess first year prgoramming assignments. This includes designing a method to perform semi-supervised learning technique on unstructured assignment data, iterative development of an application that implements the method, and an final report with qualitative analysis on the final result.
 
 - years: 2019
   employer: Chongqing Univeristy
